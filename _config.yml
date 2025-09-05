@@ -1,12 +1,18 @@
 title: "Educents"
 description: "SEO starter with Minimal Mistakes"
-url: "https://educents.com"
-baseurl: ""
+
+# --- IMPORTANTE ---
+# Para que funcione en GitHub Pages en este repo:
+url: "https://blinkx-original.github.io"
+baseurl: "/Jekyll-With-Minimal-Mistakes"
+# Cuando uses tu dominio propio (ej: educents.com), cambiá a:
+# url: "https://educents.com"
+# baseurl: ""
 
 # Theme
 remote_theme: "mmistakes/minimal-mistakes"
 
-# Plugins compatible with GitHub Pages
+# Plugins compatibles con GitHub Pages
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -18,7 +24,7 @@ minimal_mistakes_skin: "air"
 # Search (Lunr)
 search: true
 
-# Permalink structure (tweak to your preference)
+# Permalink structure
 permalink: /:categories/:title/
 
 # Excludes (won't be published)
@@ -26,3 +32,4 @@ exclude:
   - README.md
   - node_modules
   - vendor
+
