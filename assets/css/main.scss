@@ -1,8 +1,19 @@
 ---
 ---
-// Choose a skin, then import Minimal Mistakes core
-@import "minimal-mistakes/skins/air";
+
+@import "minimal-mistakes/skins/air"; // Skin del tema (puedes cambiarlo: default, dark, neon…)
 @import "minimal-mistakes";
 
-// Your custom overrides
-@import "overrides";
+// === Overrides CSS propios ===
+.block-hero { margin-bottom: 2rem; }
+.block-pricing .plan { border: 1px solid #eee; padding: 1rem; border-radius: .5rem; }
+.block-pricing .plan--featured { border-width: 2px; }
+.grid { display: grid; gap: 1rem; }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.feature__icon { width: 40px; height: 40px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; color: #555; }
+.subhead { font-size: 1.1rem; color: #555; }
+.btn { display: inline-block; padding: .6rem 1rem; border-radius: .4rem; text-decoration: none; }
+.btn--primary { background: #0366d6; color: #fff; }
+.cta-row .btn + .btn { margin-left: .5rem; }
