@@ -1,0 +1,8 @@
+---
+layout: single
+classes: wide
+---
+{% assign blocks = page.blocks | default: site.blocks %}
+{% for b in blocks %}
+  {% include blocks/{{ b.type }}.html props=b.props %}
+{% endfor %}

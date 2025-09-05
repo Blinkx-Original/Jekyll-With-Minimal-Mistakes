@@ -1,0 +1,13 @@
+{% assign p = include.props %}
+<section class="block-hero">
+  <div class="mm-hero">
+    {% if p.image %}<img src="{{ p.image | relative_url }}" alt="">{% endif %}
+    {% if p.eyebrow %}<p class="eyebrow">{{ p.eyebrow }}</p>{% endif %}
+    {% if p.headline %}<h1>{{ p.headline }}</h1>{% endif %}
+    {% if p.subhead %}<p class="subhead">{{ p.subhead }}</p>{% endif %}
+    <div class="cta-row">
+      {% if p.primary_cta %}<a class="btn btn--primary" href="{{ p.primary_cta.href | relative_url }}">{{ p.primary_cta.text }}</a>{% endif %}
+      {% if p.secondary_cta %}<a class="btn" href="{{ p.secondary_cta.href | relative_url }}">{{ p.secondary_cta.text }}</a>{% endif %}
+    </div>
+  </div>
+</section>

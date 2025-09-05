@@ -1,0 +1,12 @@
+{% assign p = include.props %}
+<section class="block-features">
+  <div class="grid grid--{{ p.columns | default: 3 }}">
+    {% for item in p.items %}
+      <article class="feature">
+        {% if item.icon %}<img class="feature__icon" src="{{ item.icon | relative_url }}" alt="">{% endif %}
+        <h3>{{ item.title }}</h3>
+        {% if item.desc %}<p>{{ item.desc }}</p>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>

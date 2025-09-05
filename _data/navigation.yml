@@ -1,0 +1,9 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Blog"
+    url: /blog/
+  - title: "Products"
+    url: /products/
+  - title: "Search"
+    url: /search/

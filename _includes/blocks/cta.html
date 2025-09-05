@@ -1,0 +1,4 @@
+{% assign p = include.props %}
+<p class="block-cta">
+  <a class="btn btn--primary" href="{{ p.href | relative_url }}">{{ p.text }}</a>
+</p>

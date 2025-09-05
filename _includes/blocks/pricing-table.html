@@ -1,0 +1,17 @@
+{% assign p = include.props %}
+<section class="block-pricing">
+  <div class="plans">
+    {% for plan in p.plans %}
+      <div class="plan{% if plan.featured %} plan--featured{% endif %}">
+        <h3>{{ plan.name }}</h3>
+        {% if plan.price %}<div class="plan__price">{{ p.currency | default: "USD" }} {{ plan.price }}</div>{% endif %}
+        {% if plan.features %}
+        <ul>
+          {% for f in plan.features %}<li>{{ f }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% if plan.cta %}<a class="btn btn--primary" href="{{ plan.cta.href | relative_url }}">{{ plan.cta.text }}</a>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>

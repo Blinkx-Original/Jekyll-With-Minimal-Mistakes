@@ -1,0 +1,9 @@
+{% assign p = include.props %}
+<section class="block-faq">
+  {% for item in p.items %}
+    <details>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+  {% endfor %}
+</section>

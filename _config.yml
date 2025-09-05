@@ -1,0 +1,28 @@
+title: "Educents"
+description: "SEO starter with Minimal Mistakes"
+url: "https://educents.com"
+baseurl: ""
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes"
+
+# Plugins compatible with GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+# Minimal Mistakes skin (color theme): air, default, dark, neon, sunrise, etc.
+minimal_mistakes_skin: "air"
+
+# Search (Lunr)
+search: true
+
+# Permalink structure (tweak to your preference)
+permalink: /:categories/:title/
+
+# Excludes (won't be published)
+exclude:
+  - README.md
+  - node_modules
+  - vendor
