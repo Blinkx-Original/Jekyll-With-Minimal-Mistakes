@@ -12,8 +12,8 @@ article.page .page__content { outline: 3px solid magenta !important; }
 /* lo que sí quieres */
 article.page .page__content { 
   outline: none !important;
-  padding-left: 0.25rem !important;   /* mueve el texto un poco a la izquierda */
-  padding-right: 1.25rem !important;
+  padding-left: 0.05rem !important;   /* mueve el texto un poco a la izquierda */
+  padding-right: 5.25rem !important;
 }
 
 /* Tablas centradas + tarjeta gris con sombra */
