@@ -26,18 +26,18 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 
-# Enlaces
-permalink: /blogs/:title/
+# Enlaces de posts
+permalink: /:categories/:title/
 
-# Paginación (nuestro índice vive en /blogs/)
+# Paginación del índice del blog (si usas /blogs/)
 paginate: 1
 paginate_path: "/blogs/page:num/"
 
-# UI
+# UI global
 breadcrumbs: true
 share: true
 
-# Comentarios (lo activas luego)
+# Comentarios (actívalo luego si quieres)
 comments:
   provider: ""         # "giscus" o "disqus" cuando lo actives
   giscus:
@@ -50,10 +50,10 @@ comments:
   disqus:
     shortname: ""
 
-# Autor por defecto (define 'martin' en _data/authors.yml)
+# Autor por defecto (defínelo en _data/authors.yml)
 author: martin
 
-# Defaults para posts
+# Defaults para POSTS: sin sidebar y SIN author_profile (lo pondremos abajo)
 defaults:
   - scope:
       path: ""
@@ -61,10 +61,10 @@ defaults:
     values:
       layout: single
       sidebar: false
+      author_profile: false     # <— importante: no mostrar autor en sidebar
       header:
         overlay: false
-      classes: ""               # normal (no 'wide')
-      author_profile: true
+      classes: ""
       show_date: false
       read_time: false
       show_tags: false
@@ -72,7 +72,7 @@ defaults:
       comments: true
       share: true
       breadcrumbs: true
-      teaser: null              # usa null explícito
+      teaser: null
 
 # CSS propio
 sass:
