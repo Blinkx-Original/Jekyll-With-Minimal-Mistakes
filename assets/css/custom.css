@@ -1,1 +1,29 @@
 /* Custom overrides (lo afinamos más tarde para el look Vercel) */
+
+/* Contenedor consistente con el masthead */
+.masthead__inner,
+.initial-content,
+.page,
+.archive {
+  max-width: 1120px;     /* ajusta a tu gusto (1000–1200 suele verse bien) */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;    /* gutter interno */
+  padding-right: 1rem;
+}
+
+/* El contenido del post (layout: single) */
+.page__content {
+  line-height: 1.7;
+}
+
+/* En páginas de listado (blog grid/list) */
+.archive {
+  padding-top: 0.5rem;
+}
+
+/* Opcional: que el título y el cuerpo “caigan” en la misma vertical */
+.page__title,
+.archive__item-title {
+  margin-left: 0;  /* nos aseguramos de no tener indent raro */
+}
