@@ -1,0 +1,11 @@
+{% comment %}
+  Renderiza la tarjeta de autor debajo del contenido del post.
+  Usa el mismo include del tema para mantener estilos.
+{% endcomment %}
+
+{% assign the_author_id = page.author | default: site.author %}
+{% if the_author_id %}
+  <div class="author-below">
+    {% include author-profile.html author=the_author_id %}
+  </div>
+{% endif %}
