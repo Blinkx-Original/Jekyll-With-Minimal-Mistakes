@@ -6,7 +6,7 @@
 .layout--single .page,
 .layout--single .page__inner-wrap,
 .layout--single .page__content {
-  padding-left: 0.75rem !important;   /* <- reduce este valor si quieres aún más a la izquierda */
+  padding-left: 0.15rem !important;   /* <- reduce este valor si quieres aún más a la izquierda */
   padding-right: 1.25rem !important;  /* equilibrio a la derecha */
 }
 
@@ -15,7 +15,7 @@
   margin-top: 2rem;
   padding: 1.25rem;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   background: #fff;
 }
 
@@ -30,7 +30,7 @@
   /* tarjeta/elevación */
   background: #f3f4f6;                 /* gris distinto al fondo del sitio */
   border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 12px;
+  border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.10);
   padding: 0.5rem;
 }
