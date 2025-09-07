@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+{% comment %}
+  Layout de post personalizado:
+  - Sin sidebar de autor (se desactiva en _config.yml).
+  - Autor al final del artículo (include author-below.html).
+  - Incluye breadcrumbs, compartir y comentarios.
+{% endcomment %}
+
+<div id="main" role="main">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if site.breadcrumbs %}
+      {% include breadcrumbs.html %}
+    {% endif %}
+
+    <header>
+      <h1 class="page__title p-name" itemprop="headline">{{ page.title | escape }}</h1>
+      {% if page.excerpt %}
+        <p class="page__lead">{{ page.excerpt | markdownify | strip_html }}</p>
+      {% endif %}
+    </header>
+
+    <section class="page__content e-content" itemprop="text">
+      {{ content }}
+    </section>
+
+    {%- comment -%} Autor debajo del contenido {%- endcomment -%}
+    {% include author-below.html %}
+
+    {%- comment -%} Botones para compartir (si share: true) {%- endcomment -%}
+    {% if page.share or site.share %}
+      {% include share.html %}
+    {% endif %}
+
+    {%- comment -%} Comentarios (si están configurados) {%- endcomment -%}
+    {% if page.comments %}
+      {% include comments.html %}
+    {% endif %}
+  </article>
+</div>
