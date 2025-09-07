@@ -2,8 +2,10 @@ main:
   - title: "Home"
     url: /
   - title: "Blog"
-    url: /blog/
+    url: /blogs/
   - title: "Products"
     url: /products/
   - title: "Search"
     url: /search/
+ - title: "Prueba"
+    url: https://clarin.com/
