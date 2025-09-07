@@ -1,35 +1,79 @@
-title: "Educents"
-description: "SEO starter with Minimal Mistakes"
+# --- Sitio (básico) ---
+title: "Tu Sitio"
+description: "Descripción del sitio"
+locale: "es-ES"
+url: "https://tu-dominio.com"     # ← cambia
+baseurl: ""                       # ← si publicas en subcarpeta, ponla (ej: /blog)
 
-# --- IMPORTANTE ---
-# Para que funcione en GitHub Pages en este repo:
-url: "https://blinkx-original.github.io"
-baseurl: "/Jekyll-With-Minimal-Mistakes"
-# Cuando uses tu dominio propio (ej: educents.com), cambiá a:
-# url: "https://educents.com"
-# baseurl: ""
+theme: minimal-mistakes-jekyll
 
-# Theme
-remote_theme: "mmistakes/minimal-mistakes"
+# --- Navegación principal (opcional, ejemplo) ---
+# navigation:
+#   - title: "Blog"
+#     url: /blog/
+#   - title: "Categorías"
+#     url: /categories/
 
-# Plugins compatibles con GitHub Pages
+# --- Plugins permitidos por GitHub Pages ---
 plugins:
+  - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-include-cache
+  - jekyll-feed
 
-# Minimal Mistakes skin (color theme): air, default, dark, neon, sunrise, etc.
-minimal_mistakes_skin: "air"
+# --- Paginación del blog ---
+paginate: 1
+paginate_path: "/blog/page:num/"
 
-# Search (Lunr)
-search: true
+# --- Breadcrumbs ---
+breadcrumbs: true
 
-# Permalink structure
+# --- Compartir ---
+share: true
+
+# --- Comentarios (lo dejamos listo; completamos IDs luego) ---
+comments:
+  provider: ""   # "giscus" o "disqus" cuando lo habilitemos
+  giscus:
+    repo: ""         # ← completar luego
+    repo_id: ""
+    category: ""
+    category_id: ""
+    mapping: "pathname"
+    reactions_enabled: "1"
+  disqus:
+    shortname: ""    # ← completar si usas Disqus
+
+# --- Autor por defecto (ver _data/authors.yml) ---
+author: martin
+
+# --- Permalinks (opcional, simple) ---
 permalink: /:categories/:title/
 
-# Excludes (won't be published)
-exclude:
-  - README.md
-  - node_modules
-  - vendor
+# --- Defaults para POSTS (aplica a todo el blog) ---
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      sidebar: false
+      header:
+        overlay: false
+      classes: ""               # normal (no 'wide')
+      author_profile: true      # muestra caja de autor debajo del post
+      show_date: false          # ocultar fecha
+      read_time: false          # ocultar tiempo de lectura
+      show_tags: false          # ocultar tags
+      related: false            # desactivar related posts
+      comments: true            # (se verán cuando configuremos provider)
+      share: true               # botones de compartir
+      breadcrumbs: true
+      teaser:                   # sin teaser => evita miniaturas automáticas en el listado
 
+# --- Sass / includes (para poder cargar CSS custom) ---
+sass:
+  style: compressed
+
+include:
+  - assets/css
+  - _pages
