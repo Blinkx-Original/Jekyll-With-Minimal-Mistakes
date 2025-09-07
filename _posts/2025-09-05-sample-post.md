@@ -43,6 +43,29 @@ article.page .page__content table:not(.rouge-table) tbody tr:last-child td:first
 article.page .page__content table:not(.rouge-table) tbody tr:last-child td:last-child   { border-bottom-right-radius: 8px !important; }
 </style>
 
+<style>
+/* Forzar 1 sola columna en posts: SIN columna meta a la izquierda */
+.layout--single .page__inner-wrap { display: block !important; }
+
+.layout--single .page__meta { display: none !important; }
+
+.layout--single .page__content,
+.layout--single .page__lead {
+  float: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 0 !important;   /* ← ahora sí, sin hueco a la izquierda */
+  padding-right: 1.25rem !important;
+}
+
+/* (Opcional) el propio contenedor .page por si hereda ancho flotado */
+.layout--single .page {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+</style>
 
 
 Hello from Minimal Mistakes.
