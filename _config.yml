@@ -1,55 +1,78 @@
-# --- Sitio (básico) ---
+# =========================
+#  Minimal Mistakes · Jekyll
+#  Config para GitHub Pages (Project Page)
+#  URL de ejemplo: https://blinkx-original.github.io/Jekyll-With-Minimal-Mistakes
+# =========================
+
+# --- Datos del sitio ---
 title: "Tu Sitio"
 description: "Descripción del sitio"
 locale: "es-ES"
-url: "https://tu-dominio.com"     # ← cambia
-baseurl: ""                       # ← si publicas en subcarpeta, ponla (ej: /blog)
 
+# IMPORTANTE: para repositorios tipo Project Page en GitHub Pages
+url: "https://blinkx-original.github.io"     # dominio raíz de tu user/org
+baseurl: "/Jekyll-With-Minimal-Mistakes"     # nombre exacto del repo, con "/"
+
+# Skin del tema (opcional): default, air, contrast, dark, etc.
+minimal_mistakes_skin: "default"
+
+# Zona horaria local para evitar delays por UTC
+timezone: "Europe/Berlin"
+
+# Publicar posts con fecha “futura” (evita que GitHub Pages los oculte por UTC)
+future: true
+
+# --- Tema ---
 theme: minimal-mistakes-jekyll
 
-# --- Navegación principal (opcional, ejemplo) ---
-# navigation:
-#   - title: "Blog"
-#     url: /blog/
-#   - title: "Categorías"
-#     url: /categories/
-
-# --- Plugins permitidos por GitHub Pages ---
+# --- Plugins soportados por GitHub Pages ---
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-include-cache
+
+# --- Navegación (ejemplo; ajusta a tu gusto) ---
+# navigation:
+#   - title: "Home"
+#     url: /
+#   - title: "Blogs"
+#     url: /blogs/
+#   - title: "Productos"
+#     url: /products/
+#   - title: "Search"
+#     url: /search/
+
+# --- Enlaces/permalinks ---
+permalink: /:categories/:title/
 
 # --- Paginación del blog ---
+# Si tu índice del blog está en /blogs/ usa esta ruta:
 paginate: 1
-paginate_path: "/blog/page:num/"
+paginate_path: "/blogs/page:num/"
 
-# --- Breadcrumbs ---
+# --- Breadcrumbs y compartir ---
 breadcrumbs: true
-
-# --- Compartir ---
 share: true
 
-# --- Comentarios (lo dejamos listo; completamos IDs luego) ---
+# --- Comentarios (deja listo; completa IDs cuando quieras habilitar) ---
 comments:
-  provider: ""   # "giscus" o "disqus" cuando lo habilitemos
+  provider: ""   # "giscus" o "disqus" cuando lo actives
   giscus:
-    repo: ""         # ← completar luego
+    repo: ""
     repo_id: ""
     category: ""
     category_id: ""
     mapping: "pathname"
     reactions_enabled: "1"
   disqus:
-    shortname: ""    # ← completar si usas Disqus
+    shortname: ""
 
-# --- Autor por defecto (ver _data/authors.yml) ---
+# --- Autor por defecto (defínelo en _data/authors.yml) ---
 author: martin
 
-# --- Permalinks (opcional, simple) ---
-permalink: /:categories/:title/
-
-# --- Defaults para POSTS (aplica a todo el blog) ---
+# --- Defaults para POSTS (tu layout base) ---
 defaults:
   - scope:
       path: ""
@@ -60,20 +83,26 @@ defaults:
       header:
         overlay: false
       classes: ""               # normal (no 'wide')
-      author_profile: true      # muestra caja de autor debajo del post
+      author_profile: true      # caja de autor debajo del post
       show_date: false          # ocultar fecha
       read_time: false          # ocultar tiempo de lectura
       show_tags: false          # ocultar tags
-      related: false            # desactivar related posts
-      comments: true            # (se verán cuando configuremos provider)
+      related: false            # sin related posts
+      comments: true            # aparecerán cuando actives el provider
       share: true               # botones de compartir
       breadcrumbs: true
-      teaser:                   # sin teaser => evita miniaturas automáticas en el listado
+      teaser:                   # sin teaser => evita miniaturas en listados
 
-# --- Sass / includes (para poder cargar CSS custom) ---
+# --- Sass/CSS personalizados ---
 sass:
   style: compressed
 
 include:
   - assets/css
   - _pages
+
+# --- Markdown (opcional; defaults de Jekyll) ---
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
