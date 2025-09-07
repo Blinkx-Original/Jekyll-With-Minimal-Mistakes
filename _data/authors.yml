@@ -1,0 +1,11 @@
+martin:
+  name: "Martin"
+  bio: "Pequeña bio del autor en 1–2 líneas."
+  avatar: "/assets/images/author.jpg"   # opcional (sube la imagen si quieres)
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/tuusuario"
+    - label: "X"
+      icon: "fab fa-x-twitter"
+      url: "https://x.com/tuusuario"
