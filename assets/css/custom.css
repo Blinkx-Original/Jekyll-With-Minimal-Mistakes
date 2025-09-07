@@ -1,44 +1,51 @@
-/* ====== CONTENEDORES ======
-   Solo estrechamos el contenido de posts/listados,
-   pero dejamos header/hero/sections full-width.
-*/
+/* ===========================
+   Ajustes de layout y estilo
+   =========================== */
 
-/* 1) Mantener el masthead y los héroes a full width */
-.masthead__inner,
+/* A) Mantener masthead y héroes FULL-WIDTH */
+.masthead,
+.masthead__inner-wrap,
 .page__hero,
-.page__hero--overlay {
+.page__hero--overlay,
+.page__hero--overlay .wrapper,
+.page__hero .wrapper,
+.feature__wrapper {
   max-width: none !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* 2) Limitar solo el contenido principal de páginas/post/listados */
-.layout--single .initial-content,
-.layout--single .page,
-.layout--single .page__content,
-.layout--home .archive,
-.layout--archive .archive,
-.layout--collection .archive {
-  max-width: 1120px;       /* ajusta 1000–1200 a gusto */
+/* B) Una sola columna y ancho cómodo para posts/páginas/listados */
+#main .page,
+#main .page__inner-wrap,
+.initial-content,
+.archive {
+  max-width: 1120px; /* ajusta 1000–1240 a gusto */
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-/* 3) Mejoras de lectura en posts */
-.layout--single .page__content {
+/* C) Quitar rastros de sidebar/meta si algún estilo los reserva */
+.layout--single .sidebar,
+.layout--single .page__meta {
+  display: none !important;
+}
+
+/* D) Lectura cómoda del cuerpo del post */
+#main .page__content {
   line-height: 1.7;
 }
 
-/* 4) Blog index en grid moderno (opcional; funciona con entries_layout: grid) */
+/* E) Blog index en grid (si entries_layout: grid en /blogs/) */
 .layout--home .archive {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* 5) Tarjeta básica (dejamos el “look Vercel” para después) */
+/* F) Tarjeta básica para items del grid (afinamos más tarde si quieres) */
 .archive__item {
   background: #fff;
   border-radius: 0.75rem;
@@ -51,13 +58,35 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* 6) Evitar indents raros en títulos */
+/* G) Autor debajo del post (tarjeta) */
+.author-below {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* H) Centrar tablas pegadas dentro del contenido */
+.page__content .table-wrapper {
+  overflow-x: auto;
+  text-align: center;
+}
+.page__content .table-wrapper table {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 100%;
+}
+.page__content table {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+/* I) Evitar indent raro en títulos */
 .page__title,
 .archive__item-title {
   margin-left: 0;
-}
-
-/* 7) (Opcional) Si usas secciones de features y quieres full-bleed */
-.feature__wrapper {
-  max-width: none !important;  /* la banda de fondo ocupa todo */
 }
