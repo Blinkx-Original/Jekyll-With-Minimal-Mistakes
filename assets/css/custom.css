@@ -2,7 +2,7 @@
    Ajustes de layout y estilo
    =========================== */
 
-/* A) Mantener masthead y héroes FULL-WIDTH */
+/* A) Masthead y héroes FULL-WIDTH */
 .masthead,
 .masthead__inner-wrap,
 .page__hero,
@@ -45,7 +45,7 @@
   gap: 1.5rem;
 }
 
-/* F) Tarjeta básica para items del grid (afinamos más tarde si quieres) */
+/* F) Tarjeta básica para items del grid */
 .archive__item {
   background: #fff;
   border-radius: 0.75rem;
@@ -67,7 +67,7 @@
   background: #fff;
 }
 
-/* H) Centrar tablas pegadas dentro del contenido */
+/* H) Centrar tablas dentro del contenido */
 .page__content .table-wrapper {
   overflow-x: auto;
   text-align: center;
@@ -85,7 +85,25 @@
   max-width: 100%;
 }
 
-/* I) Evitar indent raro en títulos */
+/* I) Bloque de compartir inline */
+.share-inline {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.share-inline .share-btn {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+.share-inline .share-btn:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* J) Evitar indent raro en títulos */
 .page__title,
 .archive__item-title {
   margin-left: 0;
