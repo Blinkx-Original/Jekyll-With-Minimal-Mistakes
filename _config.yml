@@ -27,7 +27,7 @@ plugins:
   - jekyll-feed
 
 # Enlaces
-permalink: /:categories/:title/
+permalink: /blogs/:title/
 
 # Paginación (nuestro índice vive en /blogs/)
 paginate: 1
