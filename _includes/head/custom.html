@@ -1,1 +1,95 @@
-<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+<!-- CSS inline para asegurar aplicación inmediata, sin depender de rutas/baseurl -->
+<style id="custom-css">
+/* ===========================
+   Ajustes finos de lectura
+   =========================== */
+
+/* (1) Mueve un poquito el contenido hacia la izquierda SOLO en posts */
+.layout--single .page,
+.layout--single .page__inner-wrap,
+.layout--single .page__content {
+  padding-left: 0.75rem !important;   /* ajusta si lo quieres aún más a la izquierda */
+  padding-right: 1.25rem !important;
+}
+
+/* (2) Autor debajo del post (tarjeta simple) */
+.author-below {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* (3) TABLAS: centradas + “elevadas” y gris suave distinto */
+.page__content .table-wrapper {
+  margin: 1.5rem auto;
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+
+  background: #f3f4f6;                 /* gris distinto al fondo del sitio */
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  padding: 0.5rem;
+}
+
+/* la propia tabla */
+.page__content .table-wrapper table {
+  margin: 0 auto;                      /* centra la tabla */
+  width: auto;                         /* evita 100% */
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+/* cabecera */
+.page__content .table-wrapper thead th {
+  background: #e9edf2;
+  color: #111;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* celdas */
+.page__content .table-wrapper th,
+.page__content .table-wrapper td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* rayado suave */
+.page__content .table-wrapper tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.9); }
+.page__content .table-wrapper tbody tr:nth-child(even) td { background: rgba(248,249,252,0.9); }
+
+/* hover de fila */
+.page__content .table-wrapper tbody tr:hover td {
+  background: #eef2f7;
+}
+
+/* esquinas redondeadas */
+.page__content .table-wrapper thead tr:first-child th:first-child { border-top-left-radius: 8px; }
+.page__content .table-wrapper thead tr:first-child th:last-child  { border-top-right-radius: 8px; }
+.page__content .table-wrapper tbody tr:last-child td:first-child  { border-bottom-left-radius: 8px; }
+.page__content .table-wrapper tbody tr:last-child td:last-child   { border-bottom-right-radius: 8px; }
+
+/* Botones de compartir inline */
+.share-inline {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.share-inline .share-btn {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+.share-inline .share-btn:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+</style>
