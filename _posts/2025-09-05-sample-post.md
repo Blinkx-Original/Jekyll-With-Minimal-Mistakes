@@ -5,6 +5,45 @@ date: 2025-09-05
 categories: [news]
 tags: [sample]
 ---
+<style>
+/* PRUEBA DURA: si esto NO cambia, el problema no es el CSS externo, es que no estás viendo este post o hay otro archivo */
+article.page .page__content { outline: 3px solid magenta !important; }
+
+/* lo que sí quieres */
+article.page .page__content { 
+  outline: none !important;
+  padding-left: 0.25rem !important;   /* mueve el texto un poco a la izquierda */
+  padding-right: 1.25rem !important;
+}
+
+/* Tablas centradas + tarjeta gris con sombra */
+article.page .page__content .table-wrapper,
+article.page .page__content table:not(.rouge-table) {
+  margin: 1.5rem auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  background: #f3f4f6 !important; /* gris diferente al fondo */
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10) !important;
+  padding: 0.5rem !important;
+}
+
+/* Celdas, cabecera y zebra */
+article.page .page__content table:not(.rouge-table) { border-collapse: separate !important; border-spacing: 0 !important; }
+article.page .page__content table:not(.rouge-table) thead th { background: #e9edf2 !important; font-weight: 600 !important; text-align: left !important; }
+article.page .page__content table:not(.rouge-table) th,
+article.page .page__content table:not(.rouge-table) td { padding: 10px 14px !important; border-bottom: 1px solid rgba(0,0,0,0.06) !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.9) !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:nth-child(even) td { background: rgba(248,249,252,0.9) !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:hover td { background: #eef2f7 !important; }
+article.page .page__content table:not(.rouge-table) thead tr:first-child th:first-child { border-top-left-radius: 8px !important; }
+article.page .page__content table:not(.rouge-table) thead tr:first-child th:last-child  { border-top-right-radius: 8px !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:last-child td:first-child  { border-bottom-left-radius: 8px !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:last-child td:last-child   { border-bottom-right-radius: 8px !important; }
+</style>
+
+
 
 Hello from Minimal Mistakes.
 
