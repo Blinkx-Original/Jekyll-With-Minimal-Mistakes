@@ -3,14 +3,17 @@ layout: default
 ---
 
 {% comment %}
-  Layout de post personalizado:
-  - Sin sidebar de autor (se desactiva en _config.yml).
+  Layout de post:
+  - Sin sidebar de autor (lo desactivamos en _config.yml).
   - Autor al final del artículo (include author-below.html).
-  - Incluye breadcrumbs, compartir y comentarios.
+  - Breadcrumbs arriba.
+  - Bloque de compartir inline (no usa includes del tema).
+  - Comentarios: puedes activarlos después insertando tu sistema preferido.
 {% endcomment %}
 
 <div id="main" role="main">
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+
     {% if site.breadcrumbs %}
       {% include breadcrumbs.html %}
     {% endif %}
@@ -29,14 +32,21 @@ layout: default
     {%- comment -%} Autor debajo del contenido {%- endcomment -%}
     {% include author-below.html %}
 
-    {%- comment -%} Botones para compartir (si share: true) {%- endcomment -%}
+    {%- comment -%} Compartir (inline, sin includes del tema) {%- endcomment -%}
+    {% assign canonical = page.url | absolute_url %}
     {% if page.share or site.share %}
-      {% include share.html %}
+      <div class="share-inline">
+        <a class="share-btn" href="https://x.com/intent/tweet?url={{ canonical | uri_escape }}&text={{ page.title | uri_escape }}" target="_blank" rel="noopener">Compartir en X</a>
+        <a class="share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url={{ canonical | uri_escape }}&title={{ page.title | uri_escape }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ canonical | uri_escape }}" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://wa.me/?text={{ page.title | uri_escape }}%20{{ canonical | uri_escape }}" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     {% endif %}
 
-    {%- comment -%} Comentarios (si están configurados) {%- endcomment -%}
-    {% if page.comments %}
-      {% include comments.html %}
-    {% endif %}
+    {%- comment -%}
+      Comentarios: si más adelante quieres usar Giscus/Disqus,
+      añadimos aquí su embed o el include correspondiente.
+    {%- endcomment -%}
+
   </article>
 </div>
