@@ -1,64 +1,8 @@
 /* ===========================
-   Ajustes de layout y estilo
+   Estilos mínimos y seguros
    =========================== */
 
-/* A) Masthead y héroes FULL-WIDTH */
-.masthead,
-.masthead__inner-wrap,
-.page__hero,
-.page__hero--overlay,
-.page__hero--overlay .wrapper,
-.page__hero .wrapper,
-.feature__wrapper {
-  max-width: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* B) Una sola columna y ancho cómodo para posts/páginas/listados */
-#main .page,
-#main .page__inner-wrap,
-.initial-content,
-.archive {
-  max-width: 1120px; /* ajusta 1000–1240 a gusto */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* C) Quitar rastros de sidebar/meta si algún estilo los reserva */
-.layout--single .sidebar,
-.layout--single .page__meta {
-  display: none !important;
-}
-
-/* D) Lectura cómoda del cuerpo del post */
-#main .page__content {
-  line-height: 1.7;
-}
-
-/* E) Blog index en grid (si entries_layout: grid en /blogs/) */
-.layout--home .archive {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-/* F) Tarjeta básica para items del grid */
-.archive__item {
-  background: #fff;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding: 1.25rem;
-}
-.archive__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* G) Autor debajo del post (tarjeta) */
+/* Autor debajo del post (tarjeta simple) */
 .author-below {
   margin-top: 2rem;
   padding: 1.25rem;
@@ -67,7 +11,7 @@
   background: #fff;
 }
 
-/* H) Centrar tablas dentro del contenido */
+/* Centrar tablas dentro del contenido del post */
 .page__content .table-wrapper {
   overflow-x: auto;
   text-align: center;
@@ -85,7 +29,7 @@
   max-width: 100%;
 }
 
-/* I) Bloque de compartir inline */
+/* Botones de compartir inline (no dependemos del include del tema) */
 .share-inline {
   margin-top: 1.5rem;
   display: flex;
@@ -101,10 +45,4 @@
 }
 .share-inline .share-btn:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
-
-/* J) Evitar indent raro en títulos */
-.page__title,
-.archive__item-title {
-  margin-left: 0;
 }
