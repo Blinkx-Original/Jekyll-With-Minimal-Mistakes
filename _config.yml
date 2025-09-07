@@ -1,46 +1,35 @@
 # =========================
-#  Minimal Mistakes · Jekyll
-#  Config para GitHub Pages (Project Page)
+# Minimal Mistakes · GitHub Pages (Project Page)
 # =========================
 
 title: "Tu Sitio"
 description: "Descripción del sitio"
 locale: "es-ES"
 
-# Project Page de GitHub Pages
-url: "https://blinkx-original.github.io"         # tu dominio de usuario
-baseurl: "/Jekyll-With-Minimal-Mistakes"         # nombre exacto del repo, con "/"
+# URL de usuario/org + baseurl = nombre EXACTO del repo
+url: "https://blinkx-original.github.io"
+baseurl: "/Jekyll-With-Minimal-Mistakes"
 
-# Tema (usar remote_theme, NO 'theme:')
-remote_theme: "mmistakes/minimal-mistakes"        # también puedes fijar versión: @4.26.2
+# Usa remote_theme (no 'theme:')
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin: "default"
 
 timezone: "Europe/Berlin"
 future: true
 
-# Plugins permitidos por GitHub Pages
+# Plugins soportados por GH Pages
 plugins:
-  - jekyll-remote-theme      # necesario para remote_theme
+  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
 
-# Navegación (ejemplo)
-# navigation:
-#   - title: "Home"
-#     url: /
-#   - title: "Blogs"
-#     url: /blogs/
-#   - title: "Products"
-#     url: /products/
-#   - title: "Search"
-#     url: /search/
-
+# Enlaces
 permalink: /:categories/:title/
 
-# Paginación del blog (nuestro índice está en /blogs/)
+# Paginación (nuestro índice vive en /blogs/)
 paginate: 1
 paginate_path: "/blogs/page:num/"
 
@@ -48,9 +37,9 @@ paginate_path: "/blogs/page:num/"
 breadcrumbs: true
 share: true
 
-# Comentarios (pendiente completar IDs si activas)
+# Comentarios (lo activas luego)
 comments:
-  provider: ""   # "giscus" o "disqus" cuando lo actives
+  provider: ""         # "giscus" o "disqus" cuando lo actives
   giscus:
     repo: ""
     repo_id: ""
@@ -61,10 +50,10 @@ comments:
   disqus:
     shortname: ""
 
-# Autor por defecto
+# Autor por defecto (define 'martin' en _data/authors.yml)
 author: martin
 
-# Defaults para POSTS
+# Defaults para posts
 defaults:
   - scope:
       path: ""
@@ -74,4 +63,27 @@ defaults:
       sidebar: false
       header:
         overlay: false
-      cla
+      classes: ""               # normal (no 'wide')
+      author_profile: true
+      show_date: false
+      read_time: false
+      show_tags: false
+      related: false
+      comments: true
+      share: true
+      breadcrumbs: true
+      teaser: null              # usa null explícito
+
+# CSS propio
+sass:
+  style: compressed
+
+include:
+  - assets/css
+  - _pages
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
