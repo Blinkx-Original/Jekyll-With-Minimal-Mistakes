@@ -1,26 +1,27 @@
 ---
-# Solo el main Sass necesita front matter
+# Este front matter es obligatorio para que Jekyll procese SCSS
 ---
 
-/* Importa el skin y el tema */
-@import "minimal-mistakes/skins/default"; // puedes cambiar "default" por otro skin
+/* 1) (Opcional) Sobrescribe variables ANTES de importar el tema
+   Ejemplos:
+   $link-color: #2563eb;
+   $body-color: #111;
+*/
+
+/* 2) Importa el skin seleccionado y luego el tema */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* ===========================
-   Overrides personalizados
-   =========================== */
+/* 3) Tus overrides DESPUÉS de importar el tema */
 
-/* (1) Ajuste fino: mueve un poco el contenido hacia la izquierda SOLO en posts
-   - No tocamos el masthead ni héroes.
-   - Si lo quieres más a la izquierda, baja el padding-left (p.ej., 0.5rem o 0.25rem).
-*/
+/* Ajuste fino: empuja un poco el contenido de los posts hacia la izquierda */
 .layout--single .page__inner-wrap,
 .layout--single .page__content {
-  padding-left: 0.75rem !important;
-  padding-right: 1.25rem !important;
+  padding-left: 0.5rem;   /* ajusta a gusto */
+  padding-right: 1.25rem;
 }
 
-/* (2) Autor debajo del post (tarjeta simple) */
+/* Autor debajo del post (tarjeta simple) */
 .author-below {
   margin-top: 2rem;
   padding: 1.25rem;
@@ -29,24 +30,22 @@
   background: #fff;
 }
 
-/* (3) TABLAS más bonitas, centradas y con “elevación”
-   - Las tablas Markdown en Minimal Mistakes vienen dentro de .table-wrapper.
-*/
+/* TABLAS — centradas, con “elevación” y gris suave distinto */
 .page__content .table-wrapper {
-  margin: 1.5rem auto;       /* centra el wrapper */
+  margin: 1.5rem auto;
   width: auto;
   max-width: 100%;
   overflow-x: auto;
 
-  background: #f3f4f6;       /* gris distinto al fondo general */
+  background: #f3f4f6;
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.10);
   padding: 0.5rem;
 }
 
-/* centra la tabla en el wrapper y evita que ocupe 100% */
-.page__content .table-wrapper table {
+.page__content .table-wrapper table,
+.page__content table:not(.rouge-table) {
   margin: 0 auto;
   width: auto;
   max-width: 100%;
@@ -55,50 +54,35 @@
   background: transparent;
 }
 
-/* cabecera */
-.page__content .table-wrapper thead th {
+.page__content .table-wrapper thead th,
+.page__content table:not(.rouge-table) thead th {
   background: #e9edf2;
   color: #111;
   font-weight: 600;
   text-align: left;
 }
 
-/* celdas */
 .page__content .table-wrapper th,
-.page__content .table-wrapper td {
+.page__content .table-wrapper td,
+.page__content table:not(.rouge-table) th,
+.page__content table:not(.rouge-table) td {
   padding: 10px 14px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-/* rayado */
-.page__content .table-wrapper tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.9); }
-.page__content .table-wrapper tbody tr:nth-child(even) td { background: rgba(248,249,252,0.9); }
+.page__content .table-wrapper tbody tr:nth-child(odd) td,
+.page__content table:not(.rouge-table) tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.9); }
+.page__content .table-wrapper tbody tr:nth-child(even) td,
+.page__content table:not(.rouge-table) tbody tr:nth-child(even) td { background: rgba(248,249,252,0.9); }
 
-/* hover */
-.page__content .table-wrapper tbody tr:hover td {
-  background: #eef2f7;
-}
+.page__content .table-wrapper tbody tr:hover td,
+.page__content table:not(.rouge-table) tbody tr:hover td { background: #eef2f7; }
 
-/* esquinas redondeadas de la tabla */
-.page__content .table-wrapper thead tr:first-child th:first-child { border-top-left-radius: 8px; }
-.page__content .table-wrapper thead tr:first-child th:last-child  { border-top-right-radius: 8px; }
-.page__content .table-wrapper tbody tr:last-child td:first-child  { border-bottom-left-radius: 8px; }
-.page__content .table-wrapper tbody tr:last-child td:last-child   { border-bottom-right-radius: 8px; }
-
-/* (4) Botones de compartir inline (si los usas en el layout) */
-.share-inline {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.share-inline .share-btn {
-  display: inline-block;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 0.5rem;
-  text-decoration: none;
-}
-.share-inline .share-btn:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
+.page__content .table-wrapper thead tr:first-child th:first-child,
+.page__content table:not(.rouge-table) thead tr:first-child th:first-child { border-top-left-radius: 8px; }
+.page__content .table-wrapper thead tr:first-child th:last-child,
+.page__content table:not(.rouge-table) thead tr:first-child th:last-child { border-top-right-radius: 8px; }
+.page__content .table-wrapper tbody tr:last-child td:first-child,
+.page__content table:not(.rouge-table) tbody tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+.page__content .table-wrapper tbody tr:last-child td:last-child,
+.page__content table:not(.rouge-table) tbody tr:last-child td:last-child { border-bottom-right-radius: 8px; }
