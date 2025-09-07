@@ -1,1 +1,64 @@
+<!-- Estilos inline forzados: margen del contenido y tablas bonitas/centradas -->
+<style id="force-overrides">
+/* 1) Mueve un poco el contenido hacia la izquierda SOLO en páginas de post */
+article.page .page__content {
+  padding-left: 0.5rem !important;   /* baja este valor si quieres aún más a la izquierda */
+  padding-right: 1.25rem !important;
+}
+
+/* 2) TABLAS — aplicar SIEMPRE, estén o no dentro de .table-wrapper */
+article.page .page__content .table-wrapper {
+  margin: 1.5rem auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+
+  background: #f3f4f6 !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10) !important;
+  padding: 0.5rem !important;
+}
+
+/* Si pegaste tablas HTML sin wrapper, estilamos la TABLA directamente */
+article.page .page__content table:not(.rouge-table) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;           /* evita 100% */
+  max-width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+
+  /* “Tarjeta” cuando NO hay wrapper */
+  background: #f3f4f6 !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10) !important;
+  padding: 0.25rem !important;
+}
+
+/* Cabecera y celdas (funciona con o sin wrapper) */
+article.page .page__content table:not(.rouge-table) thead th {
+  background: #e9edf2 !important;
+  color: #111 !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+
+article.page .page__content table:not(.rouge-table) th,
+article.page .page__content table:not(.rouge-table) td {
+  padding: 10px 14px !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Rayado, hover y esquinas redondeadas */
+article.page .page__content table:not(.rouge-table) tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.9) !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:nth-child(even) td { background: rgba(248,249,252,0.9) !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:hover td { background: #eef2f7 !important; }
+
+article.page .page__content table:not(.rouge-table) thead tr:first-child th:first-child { border-top-left-radius: 8px !important; }
+article.page .page__content table:not(.rouge-table) thead tr:first-child th:last-child  { border-top-right-radius: 8px !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:last-child td:first-child  { border-bottom-left-radius: 8px !important; }
+article.page .page__content table:not(.rouge-table) tbody tr:last-child td:last-child   { border-bottom-right-radius: 8px !important; }
+</style>
 
